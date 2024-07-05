@@ -1,7 +1,8 @@
 import 'package:amanahppob/app/constant/colors.dart';
+import 'package:amanahppob/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+// import 'package:get_storage/get_storage.dart';
 
 import '../controllers/login_controller.dart';
 
@@ -114,24 +115,25 @@ class LoginView extends GetView<LoginController> {
                   child: ButtonTheme(
                     height: 50,
                     child: TextButton(
-                      onPressed: () async {
-                        // prefs.remove('noHpBefore');
-                        // prefs.remove('user_id');
-                        // prefs.remove('otp');
-                        // prefs.remove('expired');
-                        // // await prefs.write('noHpBefore', noHp.text);
-                        // controller.progressDaftar = true;
-                        // controller.progressDaftar
-                        //     ? SmartDialog.showLoading(
-                        //         animationType: SmartAnimationType.scale,
-                        //         builder: (_) => const CustomLoading(),
-                        //       )
-                        //     : controller.progressDaftar = false;
-                        // print('b');
-                        // await Future.delayed(const Duration(seconds: 2));
-                        // SmartDialog.dismiss();
-                        // await controller.checkNoHp();
-                      },
+                      onPressed: () => Get.offAllNamed(Routes.HOME),
+                      //async {
+                      // prefs.remove('noHpBefore');
+                      // prefs.remove('user_id');
+                      // prefs.remove('otp');
+                      // prefs.remove('expired');
+                      // // await prefs.write('noHpBefore', noHp.text);
+                      // controller.progressDaftar = true;
+                      // controller.progressDaftar
+                      //     ? SmartDialog.showLoading(
+                      //         animationType: SmartAnimationType.scale,
+                      //         builder: (_) => const CustomLoading(),
+                      //       )
+                      //     : controller.progressDaftar = false;
+                      // print('b');
+                      // await Future.delayed(const Duration(seconds: 2));
+                      // SmartDialog.dismiss();
+                      // await controller.checkNoHp();
+                      //},
                       child: Center(
                         child: Text(
                           "Send OTP Via Whatsapp".toUpperCase(),
