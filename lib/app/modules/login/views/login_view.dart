@@ -8,7 +8,7 @@ import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
-  final bool passToggle = true;
+  // final bool passToggle = true;
   // final prefs = GetStorage();
   final String errorMessage = '';
 
@@ -69,16 +69,46 @@ class LoginView extends GetView<LoginController> {
                 const SizedBox(height: 30),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: TextField(
-                    obscureText: passToggle ? true : false,
+                  child: TextFormField(
+                    // obscureText: passToggle ? true : false,
                     keyboardType: TextInputType.phone,
                     // controller: noHp,
-                    decoration: const InputDecoration(
-                        labelText: 'Phone Number',
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                    style: const TextStyle(
+                      // Style the actual input text
+                      // color: Colors.black,
+                      color: appPurple,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 18.0,
+                    ),
+                    decoration: InputDecoration(
+                      labelText: 'Nomor Whatsapp',
+                      border: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      // focusedBorder: OutlineInputBorder(
+                      //   borderSide: BorderSide(color: Colors.black),
+                      //   borderRadius: BorderRadius.circular(10),
+                      // ),
+                      suffixIcon: const Icon(
+                        Icons.check_circle,
+                        color: Colors.green,
+                      ),
+                      prefixIcon: const Icon(Icons.phone),
+                      prefix: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 1),
+                        child: Text(
+                          '0',
+                          style: TextStyle(
+                            color: appPurple,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18.0,
+                          ),
                         ),
-                        prefixIcon: Icon(Icons.phone)),
+                      ),
+                    ),
                     onChanged: (String value) {
                       // print(phone.completeNumber.toString());
                       if (!value.startsWith('+628')) {
@@ -136,7 +166,7 @@ class LoginView extends GetView<LoginController> {
                       //},
                       child: Center(
                         child: Text(
-                          "Send OTP Via Whatsapp".toUpperCase(),
+                          "Kirim OTP Melalui Whatsapp".toUpperCase(),
                           style: const TextStyle(
                             color: appWhite,
                             fontSize: 16,
