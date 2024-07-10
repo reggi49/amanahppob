@@ -145,7 +145,7 @@ class LoginView extends GetView<LoginController> {
                   child: ButtonTheme(
                     height: 50,
                     child: TextButton(
-                      onPressed: () => Get.offAllNamed(Routes.HOME),
+                      onPressed: () => Get.offAllNamed(Routes.OTP),
                       //async {
                       // prefs.remove('noHpBefore');
                       // prefs.remove('user_id');
